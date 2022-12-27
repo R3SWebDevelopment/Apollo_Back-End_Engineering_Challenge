@@ -25,7 +25,9 @@ SECRET_KEY = 'gnfw_(l$kfzhc1!1da+su611suuigb57a=*f!z9(x*kqe5+$dp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "*"
+]
 
 
 # Application definition
