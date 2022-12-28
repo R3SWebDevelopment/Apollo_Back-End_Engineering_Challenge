@@ -8,7 +8,7 @@ def upload_page(request):
     if request.method == 'POST':
         # Valid the file has been provided
         if 'file' not in request.FILES or request.FILES['file'] is None:
-            raise BadRequest("No Input File provided")
+            return render(request, "error_message_page.html", context={"msg": "No Input File provided"})
 
         # Fetch content of uploaded file
         file = request.FILES['file']
@@ -18,7 +18,7 @@ def upload_page(request):
 
         # Valid is not an empty file
         if len(content.strip()) == 0:
-            raise BadRequest("Empty File provided")
+            return render(request, "error_message_page.html", context={"msg": "Empty XML File"})
 
         json_obj = convert_to_json(content)
 
